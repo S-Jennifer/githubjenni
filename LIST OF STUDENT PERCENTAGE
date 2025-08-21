@@ -1,0 +1,8 @@
+stu=["Ram","John","Alice","Bob","Charlie"]
+marks=[[34,45,56,56],[76,87,56,34],[45,56,74,87,],[45,67,58,67],[78,89,67,78]]
+per=[]
+for i in marks:
+    d=sum(i)//4
+    per.append(d)
+for i in range(5):
+    print("{}.{} :{}%".format(i+1,stu[i],per[i]))
