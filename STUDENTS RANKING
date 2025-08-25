@@ -1,0 +1,17 @@
+students=[
+    {"name":"Hari","dept":"CSE","marks":[100,100,100]},
+    {"name":"Arshu","dept":"CSE","marks":[98,92,94]},
+    {"name":"Ashi","dept":"CSE","marks":[99,88,96]},
+    {"name":"Jenni","dept":"CSE","marks":[97,97,97]},
+    {"name":"Mahi","dept":"CSE","marks":[95,96,87]}
+]
+for i in students:
+    tot=sum(i["marks"])
+    d=tot//3
+    i["per"]=d
+    
+res=sorted(students,key=lambda x:x["per"],reverse=True)
+des=["First","Second","Third","Fourth","Fifth"]
+
+for i in range(5):
+    print("Rank {} : Mr/Ms {} has scored {} stands {}".format(i+1,res[i]["name"],res[i]["per"],des[i]))
