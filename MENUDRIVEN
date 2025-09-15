@@ -1,0 +1,45 @@
+def square():
+    side = float(input("Enter side: "))
+    area = side * side
+    print("Area of Square =", area)
+def rectangle(length, breadth):
+    area = length * breadth
+    print("Area of Rectangle =", area)
+def circle():
+    r= float(input("Enter radius: "))
+    return math.pi * r * r
+def triangle(base, height):
+    return 0.5 * base * height
+
+while True:
+    print("___MENU___")
+    print("1. Square")
+    print("2. Rectangle")
+    print("3. Circle")
+    print("4. Triangle")
+    print("5. Exit")
+    
+    a= int(input("Enter your choice: "))
+
+    if(a== 1):
+        square()
+    elif(a== 2):
+        l = float(input("Enter length: "))
+        b = float(input("Enter breadth: "))
+        rectangle(l, b)
+    elif(a== 3):
+        area = circle()
+        print("Area of Circle =", area)
+    elif(a== 4):
+        base = float(input("Enter base: "))
+        h = float(input("Enter height: "))
+        area = triangle(base, h)
+        print("Area of Triangle =", area)
+    elif(a== 5):
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice...!")
+    
+    
+    
