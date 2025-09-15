@@ -1,0 +1,25 @@
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def is_coprime(a, b):
+    return gcd(a, b) == 1
+
+def generate_triplets(limit):
+    triplets = []
+    for m in range(2, limit):
+        for n in range(1, m):
+            if (m - n) % 2 == 1 and is_coprime(m, n):
+                a = m*m - n*n
+                b = 2*m*n
+                c = m*m + n*n
+                if c <= limit:
+                    triplets.append((a, b, c))
+    return triplets
+
+limit = int(input("Enter the limit for triplets: "))
+triplets = generate_triplets(limit)
+print("\nCo-prime Pythagorean Triplets up to", limit, ":")
+for t in triplets:
+    print(t)
