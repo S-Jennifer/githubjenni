@@ -1,0 +1,32 @@
+import random
+
+hidden = random.sample(range(1, 21), 5)
+p1 = 0
+p2 = 0
+
+for i in range(3):
+    g = int(input(f"Player1 chance {i+1}: "))
+    if g in hidden:
+        print("Correct!")
+        p1 += 1
+    else:
+        print("Wrong!")
+
+for i in range(3):
+    g = int(input(f"Player2 chance {i+1}: "))
+    if g in hidden:
+        print("Correct!")
+        p2 += 1
+    else:
+        print("Wrong!")
+
+print("\nScores:")
+print("Player1:", p1)
+print("Player2:", p2)
+
+if p1 > p2:
+    print("Winner: Player1")
+elif p2 > p1:
+    print("Winner: Player2")
+else:
+    print("Its a Draw")
