@@ -34,12 +34,12 @@ def account_menu(accounts,acc_no):
             amt=float(input("Enter deposit amount:"))
             deposit(accounts,acc_no,amt)
         elif choice=='3':
-            amt=flost(input("Enter withdrawal amount:"))
+            amt=float(input("Enter withdrawal amount:"))
             withdraw(accounts,acc_no,amt)
         elif choice=='4':
             to_acc=int(input("Enter recipient accoiunt number:"))
             amt=float(input("Enter amount to transfer:"))
-            transfer(Accounts,acc_no,to_acc,amt)
+            transfer(accounts,acc_no,to_acc,amt)
         elif choice=='5':
             print("Logging out...")
             break
