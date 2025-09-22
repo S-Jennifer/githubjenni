@@ -1,0 +1,38 @@
+class cog:
+    cmp_name="Infosys"
+    profit=50000000
+    tax=10
+    
+    def __init__ (self,a,b,c):
+        self.name=a
+        self.sal=b
+        self.share_per=c
+        self.tax_pay=0
+        self.share_amount=0
+    def cal_tax(self):
+            self.tax_pay=(self.sal*self.tax)/100
+    def cal_share(self):
+            self.share_amount=(self.profit*self.share_per)/100
+    def dis(self):
+                print("name:",self.name)
+                print("cmp:",self.cmp_name)
+                print("sal:",self.sal)
+                self.cal_tax()
+                self.cal_share()
+                print("tax:",self.tax_pay)
+                print("share_amount:",self.share_amount)
+n=int(input("Enter a number:"))
+emp=[]
+for i in range(n):
+    a=input("Enter name:")
+    b=int(input("Enter sal:"))
+    c=int(input("Enter share_per:"))
+    r=cog(a,b,c)
+    emp.append(r)
+for i in emp:
+    i.dis()
+    print("_______")
+      
+                            
+                            
+                
