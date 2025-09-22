@@ -1,0 +1,80 @@
+def deposit(accounts,acc_no,amount):
+    accounts[acc_no] +=amount
+    print(f"Rs.{amount}deposited to account{acc_no}")
+def withdraw(accounts,acc_no,amount):
+    if amount > accounts[acc_no]:
+        print("Insufficient Balance...!")
+    else:
+        accounts[acc_no] -=amount
+        print(f"{amount}Withdraw from account{acc_no}")
+def transfer(accounts,from_acc,to_acc,amount):
+    if to_acc not in accounts:
+        print("Recipient account not found")
+    elif amount > accounts[from_acc]:
+        print("Insufficient balance for transfer")
+    else:
+        accounts[from_acc] -=amount
+        accounts[to_acc] +=amount
+        print(f"{amount}Transferred from account{from_acc} to account{to_acc}")
+        
+        
+def account_menu(accounts,acc_no):
+    while True:
+        print(f"\n--Account{acc_no}Menu---")
+        print("1.Check Balance")
+        print("2.Deposit")
+        print("3.Withdraw")
+        print("4.Transfer")
+        print("5.Logout")
+        
+        choice=input("Enter the choice:")
+        if choice=='1':
+            print(f"Current balance:{accounts[acc_no]}")
+        elif choice=='2':
+            amt=float(input("Enter deposit amount:"))
+            deposit(accounts,acc_no,amt)
+        elif choice=='3':
+            amt=flost(input("Enter withdrawal amount:"))
+            withdraw(accounts,acc_no,amt)
+        elif choice=='4':
+            to_acc=int(input("Enter recipient accoiunt number:"))
+            amt=float(input("Enter amount to transfer:"))
+            transfer(Accounts,acc_no,to_acc,amt)
+        elif choice=='5':
+            print("Logging out...")
+            break
+        else:
+            print("Invalid choice!Try again..")
+        
+accounts={
+    101: 1000.0,
+    102: 500.0,
+    103: 200.0
+}
+while True:
+    print(f"\n__Welcome to Multi account bank system__")
+    acc_no=int(input("Enter your account number(or 0 to exit):"))
+    if acc_no==0:
+        print("Existing system.Good bye!")
+        break
+    elif acc_no in accounts:
+        account_menu(accounts,acc_no)
+    else:
+        print("Account not found!")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
