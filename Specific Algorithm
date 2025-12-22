@@ -1,0 +1,19 @@
+import pandas as pd
+
+data=pd.DataFrame({
+    'Color':['Green','Orange','Green','Green'],
+    'Texture':['Hard','Hard','Soft','Hard'],
+    'Label':['Yes','Yes','Yes','Yes']
+})
+
+hypothesis=['0']*(data.shape[1]-1)
+
+for i in range(len(data)):
+    if data.loc[i,'Label']=='Yes':
+        for j in range(len(hypothesis)):
+            if hypothesis[j]=='0':
+                hypothesis[j]=data.iloc[i,j]
+            elif hypothesis[j]!=data.iloc[i,j]:
+                hypothesis[j]='?'
+
+print("Final Hypothesis:",hypothesis)
