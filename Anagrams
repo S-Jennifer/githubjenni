@@ -1,0 +1,7 @@
+A="listen"
+J="silent"
+
+if sorted(A)==sorted(J):
+    print("Anagram")
+else:
+    print("Not anagram")
