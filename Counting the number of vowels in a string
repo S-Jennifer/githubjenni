@@ -1,0 +1,6 @@
+A="Where we can get the Fruits and Vegetables"
+count=0
+for i in A:
+    if i in "AEIOUaeiou":
+        count +=1
+print(count)
