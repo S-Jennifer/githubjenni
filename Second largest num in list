@@ -1,0 +1,5 @@
+data=[10, 5, 20, 8, 15]
+data=list(set(data)) 
+data.sort()
+second_largest=data[-2]
+print(second_largest)
