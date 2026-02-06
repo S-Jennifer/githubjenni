@@ -1,0 +1,6 @@
+str="malayalam"
+rev_str=str[::-1]
+if str==rev_str:
+   print("palindrome")
+else:
+  print("Not a palindrome")
