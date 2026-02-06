@@ -1,0 +1,20 @@
+str="A man, a plan, a canal: panama"
+str=str.lower()
+p=0
+q=len(str)-1
+while p<q:
+    if not str[p].isalnum():
+        p+=1
+    elif not str[q].isalnum():
+        q-=1
+    elif str[p]!=str[q]:
+        print("Not a palindrome")
+        break
+    else:
+        p+=1
+        q-=1
+else:
+    print("palindrome")
+                
+        
+
